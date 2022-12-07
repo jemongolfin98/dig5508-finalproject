@@ -6,7 +6,7 @@
 This is a platforming video game made with Javascript (p5.js & p5.play). The goal of the game is to collect all the coins in each level before time runs out, while also avoiding the enemies and obstacles.
 - - -
 #### Game Video:
-[Link]
+[Video](https://www.youtube.com/watch?v=uiI4LXLMaDU)
 - - -
 #### How to Play:
 Player Movement:
@@ -31,7 +31,7 @@ Hearts:
 
 - - -
 ### Play the Game!
-- [Level 1 - Welcome](level01.md)
+- [Level 1 - Welcome](./gameLevels/level01/index.html)
 - Level 2 - World of Fire
 - Level 3 - World of Water
 - Level 4 - Boss
