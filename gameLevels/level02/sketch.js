@@ -834,7 +834,7 @@ function drawCloud(cloud, time) {
 function draw() {
   background(200);
   
-  //camera.on();
+  camera.on();
   
   camera.x = player1.x;
   camera.y = player1.y;
@@ -848,7 +848,7 @@ function draw() {
   powerUpFunction();
   scoring();
   
-  //camera.off();
+  camera.off();
   
   gameText();
   endGame();
