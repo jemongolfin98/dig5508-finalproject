@@ -31,7 +31,7 @@ Hearts:
 
 - - -
 ### Play the Game!
-- Level 1 - Welcome
+- [Level 1 - Welcome](level01.md)
 - Level 2 - World of Fire
 - Level 3 - World of Water
 - Level 4 - Boss
