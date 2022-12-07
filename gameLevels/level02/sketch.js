@@ -1,23 +1,23 @@
-//Final Project - Level 1
+//Final Project - Level 2
 
 let player1;
 let ground01, ground02, ground03, ground04, ground05, ground06, ground07, ground08, ground09, ground10;
-let platform01, platform02, platform03, platform04, platform05, platform06, platform07, platform08, platform09, platform10;
-let coin01, coin02, coin03, coin04, coin05, coin06, coin07, coin08, coin09, coin10; 
+let platform01, platform02, platform03, platform04, platform05, platform06, platform07, platform08, platform09, platform10, platform11, platform12, platform13, platform14, platform15;
+let coin01, coin02, coin03, coin04, coin05, coin06, coin07, coin08, coin09, coin10, coin11, coin12, coin13, coin14, coin15, coin16, coin17, coin18, coin19, coin20; 
 let heart01, heart02, heart03, heart04, heart05;
 let border01, border02, border03, border04;
-let fire01, fire02, fire03, fire04, fire05, fire06, fire07, fire08, fire09, fire10;
+let fire01, fire02, fire03, fire04, fire05, fire06, fire07, fire08, fire09, fire10, fire11, fire12, fire13, fire14, fire15;
 let water01, water02, water03, water04, water05, water06, water07, water08, water09, water10;
 let firePit01, firePit02, firePit03, firePit04, firePit05;
 let waterPit01, waterPit02, waterPit03, waterPit04, waterPit05;
 let powerUpSpeedUp, powerUpSpeedDown, powerUpJumpHigher, powerUpJumpLower, powerUpEnemySpeedUp, powerUpEnemySpeedDown;
 let shapeColor = "black";
 let ground = false;
-let coins = 0, time = 120, lives = 3;
+let coins = 0, time = 180, lives = 3;
 let gameOver = false;
 let coinPoints = 0, timePoints = 0, bonusPoints = 0, totalPoints = 0;
 let powerUpSpeedUpactive = false, powerUpSpeedDownactive = false, powerUpJumpHigheractive = false, powerUpJumpLoweractive = false, powerUpEnemySpeedUpactive = false, powerUpEnemySpeedDownactive = false;
-let powerUpSpeedUptimer = 5, powerUpSpeedDowntimer = 5, powerUpJumpHighertimer = 5, powerUpJumpLowertimer = 5, powerUpEnemySpeedUptimer = 5, powerUpEnemySpeedDowntimer = 5;
+let powerUpSpeedUptimer = 5, powerUpSpeedDowntimer = 5, powerUpJumpHighertimer = 10, powerUpJumpLowertimer = 5, powerUpEnemySpeedUptimer = 5, powerUpEnemySpeedDowntimer = 5;
 let x = 0;
 let y = 0;
 let w = 0;
@@ -26,7 +26,7 @@ let d = 0;
 let clouds = [];
 
 function setup() {
-  createCanvas(1100, 600);
+  createCanvas(2100, 600);
   
   for (let i = 0; i < 10; i++) {
         clouds.push(genCloud(100, 50, 10));
@@ -37,8 +37,8 @@ function setup() {
   drawPlatforms();
   drawPowerUps();
   drawCoins();
-  //drawHealth();
-  //drawFireObstacles();
+  drawHealth();
+  drawFireObstacles();
   //drawWaterObstacles();
 
   establishPlayer();
@@ -60,8 +60,8 @@ function spriteCollision() {
   playerPlatforms();
   playerCoins();
   playerPowerUps();
-  //playerHealth();
-  //playerFireObstacles();
+  playerHealth();
+  playerFireObstacles();
   //playerWaterObstacles();
   
 }
@@ -80,12 +80,12 @@ function gameText() {
   // Displays Game Level
   fill('black')
   textSize(30);
-  text("Level 1!", width/2, height/8, width/2, height/2);
+  text("Level 2!", width/2, height/8, width/2, height/2);
   
   // Displays Game Trackers
   fill('black')
   textSize(15);
-  text("Level 1 - Welcome" + "\nTime: " + time + " seconds" + "\nLives: " + lives + "\nCoins: " + coins, width/32, height/16, width/2, height/2);
+  text("Level 2 - A World of Fire" + "\nTime: " + time + " seconds" + "\nLives: " + lives + "\nCoins: " + coins, width/32, height/16, width/2, height/2);
   
 }
 
@@ -95,6 +95,12 @@ function playerGround() {
     ground = true;
   })
   player1.collide(ground02, () => {
+    ground = true;
+  })
+  player1.collide(ground03, () => {
+    ground = true;
+  })
+  player1.collide(ground04, () => {
     ground = true;
   })
   
@@ -118,6 +124,33 @@ function playerPlatforms() {
     ground = true;
   })
   player1.collide(platform06, ()=>{
+    ground = true;
+  })
+  player1.collide(platform07, ()=>{
+    ground = true;
+  })
+  player1.collide(platform08, ()=>{
+    ground = true;
+  })
+  player1.collide(platform09, ()=>{
+    ground = true;
+  })
+  player1.collide(platform10, ()=>{
+    ground = true;
+  })
+  player1.collide(platform11, ()=>{
+    ground = true;
+  })
+  player1.collide(platform12, ()=>{
+    ground = true;
+  })
+  player1.collide(platform13, ()=>{
+    ground = true;
+  })
+  player1.collide(platform14, ()=>{
+    ground = true;
+  })
+  player1.collide(platform15, ()=>{
     ground = true;
   })
   
@@ -164,6 +197,46 @@ function playerCoins() {
   if (coin10 && player1.overlaps(coin10)) {
     coins = coins + 1;
     coin10.remove();
+  }
+  if (coin11 && player1.overlaps(coin11)) {
+    coins = coins + 1;
+    coin11.remove();
+  }
+  if (coin12 && player1.overlaps(coin12)) {
+    coins = coins + 1;
+    coin12.remove();
+  }
+  if (coin13 && player1.overlaps(coin13)) {
+    coins = coins + 1;
+    coin13.remove();
+  }
+  if (coin14 && player1.overlaps(coin14)) {
+    coins = coins + 1;
+    coin14.remove();
+  }
+  if (coin15 && player1.overlaps(coin15)) {
+    coins = coins + 1;
+    coin15.remove();
+  }
+  if (coin16 && player1.overlaps(coin16)) {
+    coins = coins + 1;
+    coin16.remove();
+  }
+  if (coin17 && player1.overlaps(coin17)) {
+    coins = coins + 1;
+    coin17.remove();
+  }
+  if (coin18 && player1.overlaps(coin18)) {
+    coins = coins + 1;
+    coin18.remove();
+  }
+  if (coin19 && player1.overlaps(coin19)) {
+    coins = coins + 1;
+    coin19.remove();
+  }
+  if (coin20 && player1.overlaps(coin20)) {
+    coins = coins + 1;
+    coin20.remove();
   }
   
 }
@@ -213,8 +286,41 @@ function playerFireObstacles() {
     fire01.remove();
   }
   
+  if (fire02 && player1.overlaps(fire02)) {
+    lives = lives - 1;
+    fire02.remove();
+  }
+  
+  if (fire03 && player1.overlaps(fire03)) {
+    lives = lives - 1;
+    fire03.remove();
+  }
+  
+  if (fire04 && player1.overlaps(fire04)) {
+    lives = lives - 1;
+    fire04.remove();
+  }
+  
+  if (fire05 && player1.overlaps(fire05)) {
+    lives = lives - 1;
+    fire05.remove();
+  }
+  
+  if (fire06 && player1.overlaps(fire06)) {
+    lives = lives - 1;
+    fire06.remove();
+  }
+  
   // Player Hits Fire Pit
   if (firePit01 && player1.overlaps(firePit01)) {
+    lives = 0;
+    player1.remove();
+  }
+  if (firePit02 && player1.overlaps(firePit02)) {
+    lives = 0;
+    player1.remove();
+  }
+  if (firePit03 && player1.overlaps(firePit03)) {
     lives = 0;
     player1.remove();
   }
@@ -307,11 +413,11 @@ function playerMovement() {
 //Determines when game is over or level is complete
 function endGame() {
   
-  if ((time == 0 && coins < 10) || lives == 0) {
+  if ((time == 0 && coins < 20) || lives == 0) {
     gameOver = true;
     gameOver1();
   }
-  if (time != 0 && coins == 10) {
+  if (time != 0 && coins == 20) {
     levelWin();
   }
   
@@ -320,23 +426,23 @@ function endGame() {
 //Main Function for Final Scoring
 function scoring() {
   
-  coinPoints = coins * 100;
+  coinPoints = coins * 150;
   
   //Establishes score based on time
-  if (time > 96) {
-    timePoints = 500;
+  if (time > 144) {
+    timePoints = 1000;
   }
-  else if (time > 72 && time <= 96) {
+  else if (time > 108 && time <= 144) {
+    timePoints = 800;
+  }
+  else if (time > 72 && time <= 108) {
+    timePoints = 600;
+  }
+  else if (time > 36 && time <= 72) {
     timePoints = 400;
   }
-  else if (time > 48 && time <= 72) {
-    timePoints = 300;
-  }
-  else if (time > 24 && time <= 48) {
+  else if (time >= 1 && time <= 36) {
     timePoints = 200;
-  }
-  else if (time >= 1 && time <= 24) {
-    timePoints = 100;
   }
   else if (time == 0) {
     timePoints = 0;
@@ -352,6 +458,8 @@ function gameOver1() {
   frameCount = stop;
   player1.vel.x = 0;
   player1.vel.y = 0;
+  
+  time = 0;
   
   //rect(90, 90, 400, height/2);
   
@@ -376,11 +484,17 @@ function levelWin() {
 
 function drawGround() {
   
-  ground01 = createSprite(550, 550, 1050, 50, 'static');
+  ground01 = createSprite(1050, 550, 2050, 50, 'static');
   ground01.shapeColor = color("brown");
   
   ground02 = createSprite(550, 500, 460, 50, 'static');
   ground02.shapeColor = color("brown");
+  
+  ground03 = createSprite(1780, 500, 460, 50, 'static');
+  ground03.shapeColor = color("brown");
+  
+  ground04 = createSprite(1850, 450, 400, 50, 'static');
+  ground04.shapeColor = color("brown");
   
 }
 
@@ -404,27 +518,54 @@ function drawPlatforms() {
   platform06 = createSprite(670, 240, 120, 20, 'static');
   platform06.shapeColor = color("gray");
   
+  platform07 = createSprite(300, 150, 120, 20, 'static');
+  platform07.shapeColor = color("gray");
+  
+  platform08 = createSprite(1520, 330, 120, 20, 'static');
+  platform08.shapeColor = color("gray");
+  
+  platform09 = createSprite(1900, 240, 120, 20, 'static');
+  platform09.shapeColor = color("gray");
+  
+  platform10 = createSprite(1700, 250, 120, 20, 'static');
+  platform10.shapeColor = color("gray");
+  
+  platform11 = createSprite(1100, 220, 120, 20, 'static');
+  platform11.shapeColor = color("gray");
+  
+  platform12 = createSprite(1300, 180, 120, 20, 'static');
+  platform12.shapeColor = color("gray");
+  
+  platform13 = createSprite(1300, 400, 120, 20, 'static');
+  platform13.shapeColor = color("gray");
+  
+  platform14 = createSprite(2025, 160, 120, 20, 'static');
+  platform14.shapeColor = color("gray");
+  
+  platform15 = createSprite(1780, 110, 120, 20, 'static');
+  platform15.shapeColor = color("gray");
+  
 }
 
 function drawBorders() {
   
-  border01 = createSprite(600, 0, 1200, 50, 'static');
+  border01 = createSprite(1050, 0, 2100, 50, 'static');
   border01.shapeColor = color("gray");
   
   border02 = createSprite(0, 300, 50, 600, 'static');
   border02.shapeColor = color("gray");
   
-  border03 = createSprite(600, 600, 1200, 50, 'static');
+  border03 = createSprite(1050, 600, 2100, 50, 'static');
   border03.shapeColor = color("gray");
   
-  border04 = createSprite(1100, 300, 50, 600, 'static');
+  border04 = createSprite(2100, 300, 50, 600, 'static');
   border04.shapeColor = color("gray");
   
 }
 
 function drawPowerUps() {
   
-  powerUpSpeedUp = createSprite(400, 450, 20, 20, 'static');
+  powerUpSpeedUp = createSprite(1800, 400, 20, 20, 'static');
   powerUpSpeedUp.shapeColor = color("purple");
   powerUpSpeedUp.rotation = 45;
   
@@ -432,13 +573,13 @@ function drawPowerUps() {
   powerUpSpeedDown.shapeColor = color("pink");
   powerUpSpeedDown.rotation = 45;
   
-  // powerUpJumpHigher = createSprite(250, 340, 20, 20, 'static');
-  // powerUpJumpHigher.shapeColor = color("purple");
-  // powerUpJumpHigher.rotation = 45;
+  powerUpJumpHigher = createSprite(400, 450, 20, 20, 'static');
+  powerUpJumpHigher.shapeColor = color("purple");
+  powerUpJumpHigher.rotation = 45;
   
-  // powerUpJumpLower = createSprite(250, 340, 20, 20, 'static');
-  // powerUpJumpLower.shapeColor = color("pink");
-  // powerUpJumpLower.rotation = 45;
+  powerUpJumpLower = createSprite(1070, 320, 20, 20, 'static');
+  powerUpJumpLower.shapeColor = color("pink");
+  powerUpJumpLower.rotation = 45;
   
   // powerUpEnemySpeedUp = createSprite(250, 340, 20, 20, 'static');
   // powerUpEnemySpeedUp.shapeColor = color("purple");
@@ -483,21 +624,75 @@ function drawCoins() {
   coin10 = createSprite(150, 200, 20, 'static');
   coin10.shapeColor = color("gold");
   
+  coin11 = createSprite(250, 120, 20, 'static');
+  coin11.shapeColor = color("gold");
+  
+  coin12 = createSprite(1900, 210, 20, 'static');
+  coin12.shapeColor = color("gold");
+  
+  coin13 = createSprite(2000, 130, 20, 'static');
+  coin13.shapeColor = color("gold");
+  
+  coin14 = createSprite(1660, 220, 20, 'static');
+  coin14.shapeColor = color("gold");
+  
+  coin15 = createSprite(1800, 80, 20, 'static');
+  coin15.shapeColor = color("gold");
+  
+  coin16 = createSprite(1100, 190, 20, 'static');
+  coin16.shapeColor = color("gold");
+  
+  coin17 = createSprite(1300, 150, 20, 'static');
+  coin17.shapeColor = color("gold");
+  
+  coin18 = createSprite(1300, 370, 20, 'static');
+  coin18.shapeColor = color("gold");
+  
+  coin19 = createSprite(1530, 300, 20, 'static');
+  coin19.shapeColor = color("gold");
+  
+  coin20 = createSprite(2000, 400, 20, 'static');
+  coin20.shapeColor = color("gold");
+  
 }
 
 function drawHealth() {
-  heart01 = createSprite(170, 320, 20, 'static');
+  heart01 = createSprite(300, 50, 20, 'static');
   heart01.shapeColor = color("red");
 }
 
 function drawFireObstacles() {
   // Draw Fire Balls
-  fire01 = createSprite(200, 320, 20, 20, 'static');
+  fire01 = createSprite(300, 130, 20, 20, 'static');
   fire01.shapeColor = color("red");
   
+  fire02 = createSprite(1800, 350, 20, 20, 'static');
+  fire02.shapeColor = color("red");
+  
+  fire03 = createSprite(1720, 90, 20, 20, 'static');
+  fire03.shapeColor = color("red");
+  
+  fire04 = createSprite(2025, 320, 20, 20, 'static');
+  fire04.shapeColor = color("red");
+  
+  fire05 = createSprite(1200, 320, 20, 20, 'static');
+  fire05.shapeColor = color("red");
+  
+  fire06 = createSprite(50, 500, 20, 20, 'static');
+  fire06.shapeColor = color("red");
+  
+  
+  
   // Draw Fire Pits
-  firePit01 = createSprite(200, 320, 20, 20, 'static');
+  firePit01 = createSprite(550, 500, 200, 50, 'static');
   firePit01.shapeColor = color("red");
+  
+  firePit02 = createSprite(1300, 550, 500, 50, 'static');
+  firePit02.shapeColor = color("red");
+  
+  firePit03 = createSprite(2000, 500, 150, 150, 'static');
+  firePit03.shapeColor = color("red");
+  
 }
 
 function drawWaterObstacles() {
@@ -506,7 +701,13 @@ function drawWaterObstacles() {
   water01.shapeColor = color("blue");
   
   // Draw Water Pits
-  waterPit01 = createSprite(200, 320, 20, 20, 'static');
+  waterPit01 = createSprite(550, 500, 200, 20, 'static');
+  waterPit01.shapeColor = color("blue");
+  
+  waterPit01 = createSprite(1300, 550, 500, 50, 'static');
+  waterPit01.shapeColor = color("blue");
+  
+  waterPit01 = createSprite(2000, 500, 150, 150, 'static');
   waterPit01.shapeColor = color("blue");
 }
 
@@ -588,16 +789,16 @@ function powerUpFunction() {
 
 function drawBackground() {
   //Draw Sky
-  fill(50, 255, 255);
-  rect(25, 25, 1050, 550);
+  fill('yellow');
+  rect(25, 25, 2050, 550);
   
   //Draw Sun
-  fill("orange");
+  fill("red");
   noStroke();
-  ellipse(- frameCount + 1200, 100, 100);
+  ellipse(- frameCount + 2200, 100, 100);
   
   //Draw Clouds
-  fill('white')
+  fill('orange')
   for (let cloud of clouds) {
         drawCloud(cloud);
     }
@@ -633,20 +834,21 @@ function drawCloud(cloud, time) {
 function draw() {
   background(200);
   
-  camera.on();
+  //camera.on();
   
   camera.x = player1.x;
   camera.y = player1.y;
   
   drawBackground();
   drawSprites();
+  //drawFireObstacles();
   gameFunction();
   spriteCollision();
   playerMovement();
   powerUpFunction();
   scoring();
   
-  camera.off();
+  //camera.off();
   
   gameText();
   endGame();
