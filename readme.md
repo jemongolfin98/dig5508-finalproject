@@ -10,7 +10,7 @@ Project Repository:
 [Link](https://github.com/jemongolfin98/dig5508-finalproject)
 - - -
 #### Game Video:
-[Video]()
+[Video](https://youtu.be/oMWPcalpGG4)
 - - -
 #### How to Play:
 Player Movement:
