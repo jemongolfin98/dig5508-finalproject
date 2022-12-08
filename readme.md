@@ -4,9 +4,13 @@
 - - -
 #### About the Game:
 This is a platforming video game made with Javascript (p5.js & p5.play). The goal of the game is to collect all the coins in each level before time runs out, while also avoiding obstacles.
+
+- - -
+Project Repository:
+[Link](https://github.com/jemongolfin98/dig5508-finalproject)
 - - -
 #### Game Video:
-[Video](https://www.youtube.com/watch?v=uiI4LXLMaDU)
+[Video]()
 - - -
 #### How to Play:
 Player Movement:
