@@ -34,5 +34,4 @@ Hearts:
 ### Play the Game!
 - [Level 1 - Welcome](./gameLevels/level01/index.html)
 - [Level 2 - World of Fire](./gameLevels/level02/index.html)
-- Level 3 - World of Water
-- Level 4 - Boss
+
