@@ -1,4 +1,4 @@
-//Final Project - Level 1
+//Final Project - Level 1 - Welcome
 
 let player1;
 let ground01, ground02, ground03, ground04, ground05, ground06, ground07, ground08, ground09, ground10;
@@ -13,11 +13,13 @@ let waterPit01, waterPit02, waterPit03, waterPit04, waterPit05;
 let powerUpSpeedUp, powerUpSpeedDown, powerUpJumpHigher, powerUpJumpLower, powerUpEnemySpeedUp, powerUpEnemySpeedDown;
 let shapeColor = "black";
 let ground = false;
-let coins = 0, time = 120, lives = 3;
+let coins = 0, time = 10, lives = 3;
 let gameOver = false;
 let coinPoints = 0, timePoints = 0, bonusPoints = 0, totalPoints = 0;
 let powerUpSpeedUpactive = false, powerUpSpeedDownactive = false, powerUpJumpHigheractive = false, powerUpJumpLoweractive = false, powerUpEnemySpeedUpactive = false, powerUpEnemySpeedDownactive = false;
 let powerUpSpeedUptimer = 5, powerUpSpeedDowntimer = 5, powerUpJumpHighertimer = 5, powerUpJumpLowertimer = 5, powerUpEnemySpeedUptimer = 5, powerUpEnemySpeedDowntimer = 5;
+let restartLevel1Button;
+let level2Button;
 let x = 0;
 let y = 0;
 let w = 0;
@@ -80,12 +82,12 @@ function gameText() {
   // Displays Game Level
   fill('black')
   textSize(30);
-  text("Level 1!", width/2, height/8, width/2, height/2);
+  text("Level 1 - Welcome!", width/2, height/8, width/2, height/2);
   
   // Displays Game Trackers
   fill('black')
   textSize(15);
-  text("Level 1 - Welcome" + "\nTime: " + time + " seconds" + "\nLives: " + lives + "\nCoins: " + coins, width/32, height/16, width/2, height/2);
+  text("Time: " + time + " seconds" + "\nLives: " + lives + "\nCoins: " + coins, width/2, height/5, width/2, height/2);
   
 }
 
@@ -356,7 +358,11 @@ function gameOver1() {
   //rect(90, 90, 400, height/2);
   
   textSize(20);
-  text("Game Over!!" + "\nCoins Obtained: " + coins + " = " + coinPoints + " point(s)" + "\nTime Remaining: " + time + " seconds = " + timePoints + " point(s)" + "\n" + "\nTotal Points: " + totalPoints + " point(s)!", 100, 100, 400, height/2);
+  text("Game Over!!" + "\nCoins Obtained: " + coins + " = " + coinPoints + " point(s)" + "\nTime Remaining: " + time + " seconds = " + timePoints + " point(s)" + "\n" + "\nTotal Points: " + totalPoints + " point(s)!", width/2, height/2, 400, height/2);
+  
+  restartLevel1Button = createButton('Restart Level');
+  restartLevel1Button.position(width/2, height/(4/3));
+  restartLevel1Button.mousePressed(/gameLevels/level01/index.html);
   
 }
 
@@ -370,7 +376,15 @@ function levelWin() {
   //rect(90, 90, 400, height/2);
   
   textSize(20);
-  text("Level Complete!!!" + "\nCoins Obtained: " + coins + " = " + coinPoints + " point(s)" + "\nTime Remaining: " + time + " seconds = " + timePoints + " point(s)" + "\n" + "\nTotal Points: " + totalPoints + " point(s)!", 100, 100, 400, height/2);
+  text("Level Complete!!!" + "\nCoins Obtained: " + coins + " = " + coinPoints + " point(s)" + "\nTime Remaining: " + time + " seconds = " + timePoints + " point(s)" + "\n" + "\nTotal Points: " + totalPoints + " point(s)!", width/2, height/2, 400, height/2);
+  
+  restartLevel1Button = createButton('Restart Level');
+  restartLevel1Button.position(width/(8/7), height/(4/3));
+  restartLevel1Button.mousePressed(/gameLevels/level01/index.html);
+  
+  level2Button = createButton('Next Level');
+  level2Button.position(width/(7/8), height/(4/3));
+  level2Button.mousePressed(/gameLevels/level02/index.html);
   
 }
 
@@ -636,7 +650,7 @@ function draw() {
   camera.on();
   
   camera.x = player1.x;
-  camera.y = player1.y;
+  camera.y = 300;
   
   drawBackground();
   drawSprites();
