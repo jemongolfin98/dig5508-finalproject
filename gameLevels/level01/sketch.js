@@ -87,7 +87,7 @@ function gameText() {
   // Displays Game Trackers
   fill('black')
   textSize(15);
-  text("Time: " + time + " seconds" + "\nLives: " + lives + "\nCoins: " + coins, width/2, height/5, width/2, height/2);
+  text("Level 1 - Welcome" + "\nTime: " + time + " seconds" + "\nLives: " + lives + "\nCoins: " + coins, width/2, height/5, width/2, height/2);
   
 }
 
@@ -362,7 +362,7 @@ function gameOver1() {
   
   restartLevel1Button = createButton('Restart Level');
   restartLevel1Button.position(width/2, height/(4/3));
-  restartLevel1Button.mousePressed(/gameLevels/level01/index.html);
+  restartLevel1Button.mousePressed();
   
 }
 
@@ -380,11 +380,11 @@ function levelWin() {
   
   restartLevel1Button = createButton('Restart Level');
   restartLevel1Button.position(width/(8/7), height/(4/3));
-  restartLevel1Button.mousePressed(/gameLevels/level01/index.html);
+  restartLevel1Button.mousePressed();
   
   level2Button = createButton('Next Level');
   level2Button.position(width/(7/8), height/(4/3));
-  level2Button.mousePressed(/gameLevels/level02/index.html);
+  level2Button.mousePressed();
   
 }
 
