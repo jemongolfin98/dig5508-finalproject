@@ -18,6 +18,8 @@ let gameOver = false;
 let coinPoints = 0, timePoints = 0, bonusPoints = 0, totalPoints = 0;
 let powerUpSpeedUpactive = false, powerUpSpeedDownactive = false, powerUpJumpHigheractive = false, powerUpJumpLoweractive = false, powerUpEnemySpeedUpactive = false, powerUpEnemySpeedDownactive = false;
 let powerUpSpeedUptimer = 5, powerUpSpeedDowntimer = 5, powerUpJumpHighertimer = 10, powerUpJumpLowertimer = 5, powerUpEnemySpeedUptimer = 5, powerUpEnemySpeedDowntimer = 5;
+let restartLevel2Button;
+let level3Button;
 let x = 0;
 let y = 0;
 let w = 0;
@@ -80,12 +82,12 @@ function gameText() {
   // Displays Game Level
   fill('black')
   textSize(30);
-  text("Level 2!", width/2, height/8, width/2, height/2);
+  text("Level 2 - A World of Fire!", width/2, height/8, width/2, height/2);
   
   // Displays Game Trackers
   fill('black')
   textSize(15);
-  text("Level 2 - A World of Fire" + "\nTime: " + time + " seconds" + "\nLives: " + lives + "\nCoins: " + coins, width/32, height/16, width/2, height/2);
+  text("Level 2 - A World of Fire" + "\nTime: " + time + " seconds" + "\nLives: " + lives + "\nCoins: " + coins, width/2, height/5, width/2, height/2);
   
 }
 
@@ -465,6 +467,10 @@ function gameOver1() {
   
   textSize(20);
   text("Game Over!!" + "\nCoins Obtained: " + coins + " = " + coinPoints + " point(s)" + "\nTime Remaining: " + time + " seconds = " + timePoints + " point(s)" + "\n" + "\nTotal Points: " + totalPoints + " point(s)!", 100, 100, 400, height/2);
+
+  restartLevel2Button = createButton('Restart Level');
+  restartLevel2Button.position(width/(7/8), height/(4/3));
+  //restartLevel2Button.mousePressed();
   
 }
 
@@ -478,7 +484,15 @@ function levelWin() {
   //rect(90, 90, 400, height/2);
   
   textSize(20);
-  text("Level Complete!!!" + "\nCoins Obtained: " + coins + " = " + coinPoints + " point(s)" + "\nTime Remaining: " + time + " seconds = " + timePoints + " point(s)" + "\n" + "\nTotal Points: " + totalPoints + " point(s)!", 100, 100, 400, height/2);
+  text("Level Complete!!!" + "\nCoins Obtained: " + coins + " = " + coinPoints + " point(s)" + "\nTime Remaining: " + time + " seconds = " + timePoints + " point(s)" + "\n" + "\nTotal Points: " + totalPoints + " point(s)!", width/2, height/2, 400, height/2);
+  
+  restartLevel2Button = createButton('Restart Level');
+  restartLevel2Button.position(width/(7/8), height/(4/3));
+  //restartLevel2Button.mousePressed();
+  
+  level3Button = createButton('Next Level');
+  level3Button.position(width/(9/8), height/(4/3));
+  //level3Button.mousePressed();
   
 }
 
@@ -837,7 +851,7 @@ function draw() {
   camera.on();
   
   camera.x = player1.x;
-  camera.y = player1.y;
+  camera.y = 300;
   
   drawBackground();
   drawSprites();

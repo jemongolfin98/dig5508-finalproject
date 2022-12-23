@@ -361,7 +361,7 @@ function gameOver1() {
   text("Game Over!!" + "\nCoins Obtained: " + coins + " = " + coinPoints + " point(s)" + "\nTime Remaining: " + time + " seconds = " + timePoints + " point(s)" + "\n" + "\nTotal Points: " + totalPoints + " point(s)!", width/2, height/2, 400, height/2);
   
   restartLevel1Button = createButton('Restart Level');
-  restartLevel1Button.position(width/2, height/(4/3));
+  restartLevel1Button.position(width/(7/8), height/(4/3));
   //restartLevel1Button.mousePressed();
   
 }
@@ -379,11 +379,11 @@ function levelWin() {
   text("Level Complete!!!" + "\nCoins Obtained: " + coins + " = " + coinPoints + " point(s)" + "\nTime Remaining: " + time + " seconds = " + timePoints + " point(s)" + "\n" + "\nTotal Points: " + totalPoints + " point(s)!", width/2, height/2, 400, height/2);
   
   restartLevel1Button = createButton('Restart Level');
-  restartLevel1Button.position(width/(8/7), height/(4/3));
+  restartLevel1Button.position(width/(7/8), height/(4/3));
   //restartLevel1Button.mousePressed();
   
   level2Button = createButton('Next Level');
-  level2Button.position(width/(7/8), height/(4/3));
+  level2Button.position(width/(9/8), height/(4/3));
   //level2Button.mousePressed();
   
 }
