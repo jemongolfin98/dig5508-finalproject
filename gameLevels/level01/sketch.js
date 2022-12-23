@@ -13,7 +13,7 @@ let waterPit01, waterPit02, waterPit03, waterPit04, waterPit05;
 let powerUpSpeedUp, powerUpSpeedDown, powerUpJumpHigher, powerUpJumpLower, powerUpEnemySpeedUp, powerUpEnemySpeedDown;
 let shapeColor = "black";
 let ground = false;
-let coins = 0, time = 10, lives = 3;
+let coins = 0, time = 120, lives = 3;
 let gameOver = false;
 let coinPoints = 0, timePoints = 0, bonusPoints = 0, totalPoints = 0;
 let powerUpSpeedUpactive = false, powerUpSpeedDownactive = false, powerUpJumpHigheractive = false, powerUpJumpLoweractive = false, powerUpEnemySpeedUpactive = false, powerUpEnemySpeedDownactive = false;
@@ -362,7 +362,7 @@ function gameOver1() {
   
   restartLevel1Button = createButton('Restart Level');
   restartLevel1Button.position(width/2, height/(4/3));
-  restartLevel1Button.mousePressed();
+  //restartLevel1Button.mousePressed();
   
 }
 
@@ -380,11 +380,11 @@ function levelWin() {
   
   restartLevel1Button = createButton('Restart Level');
   restartLevel1Button.position(width/(8/7), height/(4/3));
-  restartLevel1Button.mousePressed();
+  //restartLevel1Button.mousePressed();
   
   level2Button = createButton('Next Level');
   level2Button.position(width/(7/8), height/(4/3));
-  level2Button.mousePressed();
+  //level2Button.mousePressed();
   
 }
 
